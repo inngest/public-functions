@@ -1,0 +1,25 @@
+{
+  "name": "Github notifications to Discord",
+  "id": "probable-stallion-df625e",
+  "triggers": [
+    {
+      "event": "github/issues",
+      "expression": "data.action == 'opened' && data.repository.id == 374763231",
+      "definition": {
+        "format": "cue",
+        "synced": true,
+        "def": "file://./events/github-issues.cue"
+      }
+    }
+  ],
+  "steps": {
+    "step-1": {
+      "id": "step-1",
+      "path": "file://./steps/step-1",
+      "name": "Github notifications to Discord",
+      "runtime": {
+        "type": "docker"
+      }
+    }
+  }
+}
