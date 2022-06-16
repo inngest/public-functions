@@ -12,11 +12,6 @@ const getColor = (issue: Issue): string => {
 export async function run({ event }: Args) {
   const { data } = event;
 
-  // Only opens for the core open source repo
-  if (data.action !== "opened" || data.repository.id != 374763231) {
-    return "No action taken";
-  }
-
   const DISCORD_WEBHOOK_URL = process.env.DISCORD_COMMUNITY_WEBHOOK_URL_ISSUES;
   if (!DISCORD_WEBHOOK_URL) {
     throw new Error("DISCORD_COMMUNITY_WEBHOOK_URL_ISSUES is not set");
