@@ -4,7 +4,6 @@
   "triggers": [
     {
       "event": "github/issues",
-      "expression": "data.action == 'opened' && data.repository.id == 374763231",
       "definition": {
         "format": "cue",
         "synced": true,
